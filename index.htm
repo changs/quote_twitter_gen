@@ -1,15 +1,46 @@
 <!doctype html>
 <html>
-<head>
-  <!-- ... -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="style.css" rel="stylesheet">
-</head>
-<body>
-  <div class="main">
-    <div class="quote">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam obcaecati laudantium recusandae, debitis eum voluptatem ad, illo voluptatibus temporibus odio provident.</div>
-    <div class="author">Scott Windon</div>
-  </div>
-</body>
+  <head>
+    <!-- ... -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+      function update() {
+              $('.quote').html($('#dyntext').val());
+              $('.quote').css( "fontSize", $('#size').val() +"px" );
+            }
+
+      $(function () {
+              $('#size').change(function(){
+                      update();
+                    });
+              $('#dyntext').keyup(update);
+              $('#author-box').keyup(function() {
+                      $('.author').html($('#author-box').val());
+                    });
+            update();
+            });
+    </script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="quote"></div>
+      <div class="author"></div>
+    </div>
+    <hr/>
+    <div>
+      <label for="dyntext">Quote</label>
+      <input type="text" id="dyntext" value="Lorem ipsum" />
+    </div>
+    <div>
+      <label for="size">Size</label>
+      <input type="range" id="size" name="size" min="30" max="100">
+    </div>
+    <div>
+      <label for="author_box">Author</label>
+      <input type="text" id="author-box" value="Jan Kowalski" />
+    </div>
+  </body>
 </html>

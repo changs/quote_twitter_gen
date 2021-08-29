@@ -3,12 +3,13 @@ body {
   font-size: 40px;
 }
 .main {
-  width: 1200px;
-  height: 675px;
+  width: 1150px;
+  height: 625px;
   background-color: #FFDDBE;
-  padding: 5px;
+  padding: 25px;
 }
 .quote {
+  height: 580px;
 }
 .author {
   margin-top: 20px;
