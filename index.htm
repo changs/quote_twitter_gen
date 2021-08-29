@@ -11,8 +11,7 @@
       function update() {
               $('#quote-text').html($('#dyntext').val());
               $('#quote-text').css( "fontSize", $('#size').val() +"px" );
-            }
-
+      }
       $(function () {
               $('#size').change(function(){
                       update();
@@ -21,8 +20,13 @@
               $('#author-box').keyup(function() {
                       $('.author').html($('#author-box').val());
                     });
-            update();
-            });
+              update();
+              $('#generate').click(function() {
+                      html2canvas(document.querySelector(".main")).then(canvas => {
+                              document.body.appendChild(canvas)
+                      });
+              });
+      });
     </script>
   </head>
   <body>
@@ -42,6 +46,9 @@
     <div>
       <label for="author_box">Author</label>
       <input type="text" id="author-box" value="Jan Kowalski" />
+    </div>
+    <div>
+      <button type="button" id='generate'>Generate Image</button>
     </div>
   </body>
 </html>
