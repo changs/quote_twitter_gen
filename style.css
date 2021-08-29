@@ -9,14 +9,14 @@ body {
   padding: 25px;
 }
 .quote {
-  height: 580px;
+  height: 570px;
 }
 .author {
   margin-top: 20px;
   border-top: 2px solid #2A2A2A;
   padding-top: 5px;
   padding-left: 20px;
-  font-size: 30px;
+  font-size: 40px;
 }
 
 blockquote {
