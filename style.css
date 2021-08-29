@@ -1,0 +1,18 @@
+body {
+  font-family: "Ovo";
+  font-size: 40px;
+}
+.main {
+  width: 1200px;
+  height: 675px;
+  background-color: #FFDDBE;
+  padding: 5px;
+}
+.quote {
+}
+.author {
+  margin-top: 20px;
+  border-top: 2px solid #2A2A2A;
+  padding-top: 5px;
+  font-size: 26px;
+}
