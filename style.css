@@ -17,3 +17,25 @@ body {
   padding-top: 5px;
   font-size: 26px;
 }
+
+blockquote {
+  text-indent: -0.45em;
+  margin: 0;
+  margin-left: 25px;
+}
+@supports ( hanging-punctuation: first) {
+  blockquote {
+    text-indent: 0;
+    hanging-punctuation: first;
+  }
+}
+
+blockquote::before {
+    content: open-quote;
+}
+blockquote::after {
+    content: close-quote;
+}
+blockquote {
+    quotes: "“" "”" "‘" "’";
+}
