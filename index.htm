@@ -22,8 +22,8 @@
                     });
               update();
               $('#generate').click(function() {
-                      html2canvas(document.querySelector(".main")).then(canvas => {
-                              document.body.appendChild(canvas)
+                      html2canvas(document.querySelector('.main')).then(canvas => {
+                              $('#image').html(canvas);
                       });
               });
       });
@@ -49,6 +49,8 @@
     </div>
     <div>
       <button type="button" id='generate'>Generate Image</button>
+    </div>
+    <div id="image">
     </div>
   </body>
 </html>
