@@ -11,7 +11,13 @@
       function update() {
               $('#quote-text').html($('#dyntext').val());
               $('#quote-text').css( "fontSize", $('#size').val() +"px" );
-      }
+            }
+      function generate() {
+              html2canvas(document.querySelector('.main')).then(canvas => {
+                      $('#image').html(canvas);
+                      canvas.toBlob(blob => navigator.clipboard.write([new ClipboardItem({'image/png': blob})]));
+                    });
+            }
       $(function () {
               $('#size').change(function(){
                       update();
@@ -21,13 +27,8 @@
                       $('.author').html($('#author-box').val());
                     });
               update();
-              $('#generate').click(function() {
-                      html2canvas(document.querySelector('.main')).then(canvas => {
-                              $('#image').html(canvas);
-                              canvas.toBlob(blob => navigator.clipboard.write([new ClipboardItem({'image/png': blob})]));
-                      });
-              });
-      });
+              $('#generate').click(generate);
+            });
     </script>
   </head>
   <body>
