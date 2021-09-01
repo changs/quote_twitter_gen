@@ -1,8 +1,6 @@
-body {
+.main {
   font-family: "Ovo";
   font-size: 40px;
-}
-.main {
   width: 1150px;
   height: 625px;
   background-color: #FFDDBE;
